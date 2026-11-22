@@ -1,3 +1,7 @@
-## Шаблон для третьего ДЗ по ИПР
+## На 4 балла
+2026-11-22 19:44:43,490 listening port=8000 storage=sqlite
+2026-11-22 19:45:24,548 http 192.168.65.1 "GET / HTTP/1.1" 200 -
+2026-11-22 19:46:05,962 http 192.168.65.1 "GET / HTTP/1.1" 200 -
+2026-11-22 19:46:12,835 http 192.168.65.1 "POST /increment HTTP/1.1" 200 -
 
-Условие дз доступно по [ссылке](https://github.com/Nikfilk2030/missing_semester_hse_cs/blob/main/2026/amcs/year_1/hw_3/README.md)
+

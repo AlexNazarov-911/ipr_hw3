@@ -1,0 +1,26 @@
+services:
+  app:
+    build: .
+    ports:
+      - "${APP_PORT}:8000"
+    environment:
+      GREETING: "${GREETING}"
+      STORAGE: redis
+      REDIS_URL: "redis://redis:6379/0"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "from urllib.request import urlopen; urlopen('http://127.0.0.1:8000/readyz', timeout=3)"
+
+  redis:
+    image: redis:7.4-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+
+volumes:
+  redis-data:
